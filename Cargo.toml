@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "adder",
+    "hello-world",
+    "input-parabola",
+    "loop-adder",
+    "vector-methods",
+    "input-adder",
+    "input-validate",
+]
