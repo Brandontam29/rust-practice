@@ -1,13 +1,21 @@
 use std::io;
 
 fn main() {
-    let mut input1 = String::new();
+    let mut array: [i32; 3] = [0; 3];
 
-    println!("Enter the first number");
+    for (_, element) in array.iter_mut().enumerate() {
+        let mut input = String::new();
 
-    io::stdin()
-        .read_line(&mut input1)
-        .expect("failed to read line");
+        println!("Enter a number:");
 
-    let x = input1.trim().parse::<i32>().expect("Invalid number");
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read line");
+
+        let number = input.trim().parse::<i32>().expect("Invalid number");
+
+        *element = number;
+    }
+
+    println!("{}x^2 + {}x + {}", array[0], array[1], array[2]);
 }
